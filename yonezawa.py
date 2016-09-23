@@ -33,24 +33,5 @@ def main():
 						f.closed
 						time.sleep(waittime)
 
-'''
-def getbook(fulltitle, page, lastpage, book_id, scale, waittime): #download book
-	while (page <= lastpage):
-		if page < 10:
-			filename = "{0}_000{1}.jpg".format(fulltitle, page)
-		elif page < 100:
-			filename = "{0}_00{1}.jpg".format(fulltitle, page)
-		else:
-			filename = "{0}_0{1}.jpg".format(fulltitle, page)
-		print("Now downloading page {0} of {1} of {2}.".format(page, lastpage, fulltitle))
-		payload = {"itemId": "info:ndljp/pid/{}".format(book_id), "contentNo": page, "outputScale": scale}
-		r = requests.get("http://kindai.ndl.go.jp/view/jpegOutput", params=payload)
-		with open(filename, "wb") as f:
-			f.write(r.content)
-			f.closed
-			time.sleep(waittime)
-			page = page + 1
-'''
-
 if __name__ == "__main__":
 	main()
